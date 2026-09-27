@@ -11,5 +11,5 @@ and the result file that shows the verdict.
 | C003 | REFUTED | E001 replays byte for byte on the S25 and x86_64 (P9): digests differ; verdicts and values agree |
 | C005 | REPLICATED | E001 replays on the S25 and x86_64 to 10 decimal places (P10, seeds 1-5) |
 | C006 | REPLICATED | small-loop holonomy carries signed area for any noncommuting pair; commuting pairs carry none (E002; x86_64 and S25) |
-| C007 | TESTED | a per-resource holonomy fingerprints concurrent histories and merges from fingerprints alone (E003) |
+| C007 | REPLICATED | a per-resource holonomy fingerprints concurrent histories and merges from fingerprints alone (E003) |
 | C004 | PROPOSED | the geometric layer improves a local LLM's reasoning beyond a sham |

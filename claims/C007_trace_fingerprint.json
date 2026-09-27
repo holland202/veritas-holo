@@ -1,9 +1,18 @@
 {
  "id": "C007",
- "status": "TESTED",
+ "status": "REPLICATED",
  "claim": "A holonomy in SL(2,F_p)^R, with one block per resource, fingerprints concurrent histories: it is invariant under reordering of independent actions, sensitive to swaps of dependent ones, and mergeable from two fingerprints in time independent of log length.",
  "experiment": "E003",
- "predictions": ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"],
+ "predictions": [
+  "T1",
+  "T2",
+  "T3",
+  "T4",
+  "T5",
+  "T6",
+  "T7",
+  "T8"
+ ],
  "evidence": "results/verified/E003_x86_64.json",
- "limits": "Not adversarially secure (Cayley-hash collision attacks exist). A per-resource SHA-256 baseline decides equality equally correctly and 5.9x faster per event; the advantage is composition only. One alphabet, length 200, one prime; x86_64 only."
+ "limits": "Not adversarially secure (Cayley-hash collision attacks exist). A per-resource SHA-256 baseline decides equality equally correctly and 5.9x faster per event; the advantage is composition only. One alphabet, length 200, one prime; x86_64 and the S25 (aarch64) agree on every exact count."
 }
