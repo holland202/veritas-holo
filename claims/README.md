@@ -22,4 +22,5 @@ and the result file that shows the verdict.
 | C015 | TESTED | successful learned operators stay exact at L=10000 in float16 (22/22) (E009) |
 | C016 | TESTED | held-out composition holds on A5 with 3-cycle generators: 40/40 at 1.0; the memorising null at chance (E010) |
 | C017 | TESTED | a 242-product margin decides snapped decoding for every length: 300/300 agreement with 10⁴-step runs; a data-built codebook is certified to δ ≈ 0.1 (E011) |
+| C018 | TESTED | projecting noisy operators onto three relator orders gives a certified codebook: 30/30 at δ ≤ 0.2, 23/30 at 0.3; a wrong order 0/120 (E012) |
 | C004 | PROPOSED | the geometric layer improves a local LLM's reasoning beyond a sham |

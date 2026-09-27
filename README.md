@@ -26,6 +26,7 @@ Nothing in this repository answers that yet. What exists is the first instrument
 | [E009](experiments/E009_blind_check_lowprecision/) | can a check that does not know the group's relations predict training success; do learned operators survive half precision? | **2 of 4 held, 2 FAILED (kept)**: the blind residual is informative (AUC 0.904) but not a gate; all 22 successful runs stayed exact at L=10000 in float16 |
 | [E010](experiments/E010_a5_composition/) | does E007's held-out composition hold on a different group (A5, 3-cycle generators)? | **3 of 3 held**: 40 of 40 runs learned the seen words and scored 1.0 on unseen transitions; the memorising null stayed at chance (max 0.0240) |
 | [E011](experiments/E011_snap_certificate/) | can a finite check decide, for every length, whether snapping to a codebook decodes exactly; can the codebook come from data? | **5 of 5 held**: in 300 of 300 runs a 242-product margin agreed with a 10⁴-step run (210 certified, all exact; 90 not, all wrong); a data-built codebook is certified to about δ = 0.1 |
+| [E012](experiments/E012_relator_projection/) | can the codebook be recovered from noisy operators using only the orders of three relators? | **6 of 6 held**: certified 30/30 at δ ≤ 0.2 and 23/30 at 0.3, against 0/30 for E011's data codebook at 0.2; a wrong relator order: 0/120 |
 | E7 | a task whose holonomy information no equal-cost classical recurrence computes | not found yet |
 | language models | only after a task with an advantage exists | not started |
 
@@ -71,6 +72,8 @@ numbers.
 - The same held-out composition holds on a second group, A5, in 40 of 40 runs (E010).
 - A finite certificate for snapping: if 242 checks on the codebook pass, snapped decoding is exact at
   every length; in 300 of 300 runs it matched a 10⁴-step run, including 90 where it said no (E011).
+- Projecting noisy operators onto three relator orders (t², c⁵, (tc)⁴) recovers a codebook the
+  certificate accepts up to where the true representation's does; a wrong order gives 0 of 120 (E012).
 - Training on labelled words of length ≤ 8 can find S5-tracking operators: on 3 of 5 registered seeds
   they were exact at length 160, 20× the longest training word. The readout was fitted on labelled
   long words; the operators never saw one. On 2 of 5 seeds training failed (E005).
