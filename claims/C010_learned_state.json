@@ -1,0 +1,9 @@
+{
+ "id": "C010",
+ "status": "TESTED",
+ "claim": "Gradient descent on 8x8 unitary operators, given only S5-labelled words of length <= 8 and no relations, learns operators that track S5 exactly on words of length 40 and 160 on 3 of 5 seeds, by building the group's relations into part of the space; the same training restricted to commuting operators stays at the letter-count ceiling.",
+ "experiment": "E005",
+ "predictions": ["L1", "L2", "L3", "L4", "L5", "L6"],
+ "evidence": "results/verified/E005_x86_64.json",
+ "limits": "2 of 5 seeds fail; readout fitted on labelled long words; one group and width; a lookup table is exact; x86_64 only."
+}

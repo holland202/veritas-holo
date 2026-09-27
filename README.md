@@ -17,6 +17,7 @@ Nothing in this repository answers that yet. What exists is the first instrument
 | [E002](experiments/E002_holonomy_area/) | what does holonomy carry, and does it beat a cheap exact computation? | **6 of 6 held** on x86_64 and on the S25: it carries signed area for any noncommuting operators (P8's sham included); the shoelace formula gets it exactly for far less. **No advantage.** |
 | [E003](experiments/E003_trace_fingerprint/) | can a holonomy fingerprint concurrent histories, forgiving legal reorderings and merging from fingerprints alone? | **8 of 8 held** on x86_64 and on the S25: exact on 3000 of 3000 pairs; merge time flat from 100 to 100,000 events. The advantage is composition, not information or speed. |
 | [E004](experiments/E004_group_state/) | which kinds of recurrent state can track S5, the group behind the state-space-model limits? | **4 of 6 held, 2 FAILED (kept)**: relation-respecting operators exact at L=40, 160; commuting ones capped by letter counts; relation-free ones at chance. G1 failed on a readout flaw; G5's sham kept a fading signal. |
+| [E005](experiments/E005_learned_state/) | can training discover a group's state from short examples, with no relations given? | **6 of 6 held**: learned from words of length ≤ 8, exact at length 160 (20×) on 3 of 5 seeds; the relations appear in the learned operators; commuting training stays at the count ceiling. |
 | E7 | a task whose holonomy information no equal-cost classical recurrence computes | not found yet |
 | language models | only after a task with an advantage exists | not started |
 
@@ -32,6 +33,17 @@ No semantic assertion becomes a fact directly:
 
 A language model, when one is added, may only *propose* transitions. The engine applies them, the
 invariants check them, and the result is recorded. The model proposes; the mathematics disposes.
+
+## What works so far
+
+- A fingerprint for concurrent logs that ignores harmless reordering and merges from fingerprints
+  alone (E003).
+- Operators that track a noncommutative state exactly at any length, where commuting state, the
+  kind diagonal state-space models use, provably cannot (E004).
+- Training that discovers those operators from short labelled examples and extrapolates 20× (E005).
+
+Each line links to registered predictions, controls and a replayable run. What did not work is
+kept too, in [`claims/`](claims/).
 
 ## Method
 
