@@ -1,0 +1,1 @@
+dim 8 seed 14 centroid@L [1.0, 1.0, 1.0] strict@L [0.9525, 0.7435, 0.74] eig~1 per relator {'t2': 5, 'c5': 5, 'tc4': 5, 'tcitc3': 5, 'tc2itc2_2': 5}
