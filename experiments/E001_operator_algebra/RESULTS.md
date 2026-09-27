@@ -117,3 +117,11 @@ Arm (Qualcomm Oryon) and x86 (Intel Xeon) to 10 decimal places; the raw-byte dig
 The stated way it could still fail, a value landing on a rounding boundary, did not happen in
 these 5 x 13 states; it remains possible for other seeds and is why the claim is "5 seeds", not
 "always".
+
+## P8 superseded before running (2026-09-27)
+
+Designing E002 showed that P8's sham (same spectra, randomised eigenvectors) should carry a small
+loop's holonomy signal as well as the "real" operators, since to second order holonomy depends only
+on noncommutativity. P8 is not deleted or edited; E002 registers the test of that premise as E3
+(prediction: the sham carries the signal, which would refute P8 as written). See
+`experiments/E002_holonomy_area/PREREG.md`.
