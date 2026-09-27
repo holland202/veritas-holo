@@ -85,3 +85,18 @@ VERDICT  10 of 10 registered predictions and nulls held
   both platforms for seeds 1 to 5. The worst differences seen here are around 1e-14, so rounding at
   1e-10 should absorb them, unless a value sits on a rounding boundary; that is the way it could
   fail.
+
+## P10, x86_64 side (container, 2026-09-27)
+
+`Trajectory.digest(decimals=10)` rounds real and imaginary parts to 10 places and adds 0.0 so that
+-0.0 and 0.0 hash alike. A new test pins the instrument: 1e-14 noise changes the raw digest but not
+the rounded one, a 1e-6 change still shows, and -0.0 equals 0.0 (13 passed). E001 verdicts unchanged
+(10 of 10, seeds 1-5). Rounded digests on x86_64, to be compared with the S25:
+
+```
+seed 1  a20f68e73d04bbf7d6b322884859725e940c4f3505ba02377f100bb9efbb068b
+seed 2  c6a52390c8b442d7d4ddee1afe33c85b85b1fe5916db4a4b12691d3961720055
+seed 3  958217cbd993dc68de4bec7928eac9f61579a24b17f13e9d4c15d8cbbed54022
+seed 4  0ce75d98dbe5a24d25d26097e69d6a71f6a06d5c5b3c39dc68b5b8a711f80ca0
+seed 5  833b7caa8e650ea90eaf3ef4bedb7ff3fe54d6f6f0597ac0c8c6b83a3ef9897d
+```

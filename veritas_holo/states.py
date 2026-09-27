@@ -26,11 +26,17 @@ class Trajectory:
     states: tuple  # x_0 .. x_k, each a numpy array
     products: tuple  # U_1 .. U_k, the running operator products
 
-    def digest(self) -> str:
-        """sha256 over the raw bytes of every state, in order: the replay fingerprint."""
+    def digest(self, decimals: int | None = None) -> str:
+        """sha256 over the bytes of every state, in order: the replay fingerprint.
+        decimals=None hashes the raw doubles (exact per platform; P9 showed it differs across them).
+        decimals=k rounds real and imaginary parts to k places first, and adds 0.0 so that -0.0 and
+        0.0 hash alike (P10: meant to agree across platforms)."""
         h = hashlib.sha256()
         for s in self.states:
-            h.update(np.ascontiguousarray(s, dtype=np.complex128).tobytes())
+            a = np.ascontiguousarray(s, dtype=np.complex128)
+            if decimals is not None:
+                a = np.round(a.real, decimals) + 0.0 + 1j * (np.round(a.imag, decimals) + 0.0)
+            h.update(np.ascontiguousarray(a, dtype=np.complex128).tobytes())
         return h.hexdigest()
 
 

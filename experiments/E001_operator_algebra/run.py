@@ -86,6 +86,7 @@ def run(seed):
     d1, d1b, d2 = traj.digest(), trajectory_for(seed)[4].digest(), trajectory_for(seed + 1)[4].digest()
     out["P7"] = (d1 == d1b and d1 != d2, f"seed {seed} twice: {d1[:16]} {d1b[:16]}; seed {seed + 1}: {d2[:16]}")
     return out, {"state_holonomy": state_holonomy, "slope": slope, "replay_digest": d1,
+                 "rounded_digest_10dp": traj.digest(decimals=10),
                  "holonomy_curve": dict(zip(map(str, EPSILONS), map(float, h)))}
 
 
@@ -103,6 +104,7 @@ def main():
         print(f"{'HELD  ' if ok else 'FAILED'} {k:3} {detail}")
     print(f"state holonomy d(A1 A2 A1' A2' x, x) = {extra['state_holonomy']:.4f}  (reported, not predicted)")
     print(f"replay digest {extra['replay_digest']}")
+    print(f"rounded digest (10 dp, P10) {extra['rounded_digest_10dp']}")
     held = sum(ok for ok, _ in out.values())
     print(f"VERDICT  {held} of {len(out)} registered predictions and nulls held")
     if a.json:

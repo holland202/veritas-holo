@@ -97,3 +97,20 @@ def test_e001_verdicts_depend_on_the_data(name, monkeypatch):
         assert bool(out["P3"][0]) is False  # diagonal operators commute: noncommutativity must fail
     else:
         assert bool(out[name][0]) is True  # the nulls and the invariant are unaffected
+
+
+def test_rounded_digest_ignores_last_bit_noise_but_not_real_change():
+    """P10's instrument: rounding absorbs 1e-14 noise, catches a 1e-6 change, and treats -0.0 as 0.0."""
+    r = rng()
+    x = random_state(8, r)
+    ops = [expi(random_hermitian(8, r)) for _ in range(3)]
+    base = run_trajectory(x, ops)
+    noisy = run_trajectory(x * (1 + 1e-14), ops)
+    moved = run_trajectory((x + 1e-6 * random_state(8, r)) / np.linalg.norm(x + 1e-6 * random_state(8, r)), ops)
+    assert noisy.digest() != base.digest()                      # raw bytes see the noise
+    assert noisy.digest(decimals=10) == base.digest(decimals=10)  # rounded does not
+    assert moved.digest(decimals=10) != base.digest(decimals=10)  # a real change still shows
+    from veritas_holo.states import Trajectory
+    z1 = Trajectory((np.array([0.0 + 0.0j]),), ())
+    z2 = Trajectory((np.array([-0.0 - 0.0j]),), ())
+    assert z1.digest(decimals=10) == z2.digest(decimals=10)
