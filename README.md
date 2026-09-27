@@ -24,6 +24,8 @@ Nothing in this repository answers that yet. What exists is the first instrument
 | [E007](experiments/E007_heldout_composition/) | do learned operators handle transitions never seen in training, where a transition memoriser cannot? | **3 of 3 held**: all 12 runs that learned the seen words scored 1.0 on words full of unseen transitions; the memorising null (13 runs that learned the seen words) stayed at chance on them |
 | [E008](experiments/E008_drift_and_snapping/) | is drift unavoidable in a continuum representation, and does snapping to a finite codebook stop it? | **4 of 4 held**: rounding drift 6.5e-10 after 1e6 steps (negligible); operator error kills decoding by 1e4 steps; snapping every step restores it to 1e5 |
 | [E009](experiments/E009_blind_check_lowprecision/) | can a check that does not know the group's relations predict training success; do learned operators survive half precision? | **2 of 4 held, 2 FAILED (kept)**: the blind residual is informative (AUC 0.904) but not a gate; all 22 successful runs stayed exact at L=10000 in float16 |
+| [E010](experiments/E010_a5_composition/) | does E007's held-out composition hold on a different group (A5, 3-cycle generators)? | **3 of 3 held**: 40 of 40 runs learned the seen words and scored 1.0 on unseen transitions; the memorising null stayed at chance (max 0.0240) |
+| [E011](experiments/E011_snap_certificate/) | can a finite check decide, for every length, whether snapping to a codebook decodes exactly; can the codebook come from data? | **5 of 5 held**: in 300 of 300 runs a 242-product margin agreed with a 10⁴-step run (210 certified, all exact; 90 not, all wrong); a data-built codebook is certified to about δ = 0.1 |
 | E7 | a task whose holonomy information no equal-cost classical recurrence computes | not found yet |
 | language models | only after a task with an advantage exists | not started |
 
@@ -66,6 +68,9 @@ numbers.
   uses the known S5 relations. Restarting on it gave a working model in 9 of 10 groups (E006).
 - Operators trained without two transitions handle them exactly once training succeeds (12 of 12),
   while a model that memorises transitions stays at chance on them (E007).
+- The same held-out composition holds on a second group, A5, in 40 of 40 runs (E010).
+- A finite certificate for snapping: if 242 checks on the codebook pass, snapped decoding is exact at
+  every length; in 300 of 300 runs it matched a 10⁴-step run, including 90 where it said no (E011).
 - Training on labelled words of length ≤ 8 can find S5-tracking operators: on 3 of 5 registered seeds
   they were exact at length 160, 20× the longest training word. The readout was fitted on labelled
   long words; the operators never saw one. On 2 of 5 seeds training failed (E005).

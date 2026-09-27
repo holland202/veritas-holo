@@ -20,4 +20,6 @@ and the result file that shows the verdict.
 | C013 | TESTED | rounding drift in a continuum representation is negligible to 1e6 steps; operator error is what breaks decoding, and snapping to a finite codebook every step removes it (E008) |
 | C014 | REFUTED | a blind training residual gates training success (B1, B2 failed: 16/18 and 6/22; AUC 0.904) (E009) |
 | C015 | TESTED | successful learned operators stay exact at L=10000 in float16 (22/22) (E009) |
+| C016 | TESTED | held-out composition holds on A5 with 3-cycle generators: 40/40 at 1.0; the memorising null at chance (E010) |
+| C017 | TESTED | a 242-product margin decides snapped decoding for every length: 300/300 agreement with 10⁴-step runs; a data-built codebook is certified to δ ≈ 0.1 (E011) |
 | C004 | PROPOSED | the geometric layer improves a local LLM's reasoning beyond a sham |
