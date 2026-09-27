@@ -1,0 +1,5 @@
+{"id": "C004", "status": "PROPOSED",
+ "claim": "A geometric state-transition layer improves a small local language model's reasoning at equal compute, beyond a sham geometry.",
+ "arms": ["LLM alone", "LLM + geometric substrate", "LLM + sham geometry", "LLM + randomised substrate"],
+ "requires": ["C002 supported first", "sealed evaluation", "matched compute"],
+ "limits": "Not started. The project's headline question; nothing supports it yet."}

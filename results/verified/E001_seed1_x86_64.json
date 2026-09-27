@@ -1,0 +1,61 @@
+{
+ "experiment": "E001",
+ "holonomy_curve": {
+  "0.001": 2.410969873274971e-07,
+  "0.002": 9.643879141661002e-07,
+  "0.005": 6.027422925993308e-06,
+  "0.01": 2.410966973905874e-05,
+  "0.02": 9.643832751843283e-05,
+  "0.05": 0.0006027241718201037,
+  "0.1": 0.002410677055348655
+ },
+ "machine": "x86_64",
+ "numpy": "2.4.4",
+ "python": "3.11.15",
+ "replay_digest": "b9e9b84f9688c364ba037fa0279ea1794d7e2b0a4ff062b769a9c6ab94f803b5",
+ "results": {
+  "N3": {
+   "detail": "max ||[Di,Dj]|| over 28 diagonal pairs 0.00e+00",
+   "held": true
+  },
+  "N4": {
+   "detail": "max h(eps) for diagonal X, Y 7.20e-16",
+   "held": true
+  },
+  "N5": {
+   "detail": "checker FAIL, worst | ||x_k|| - 1 | 0.0818",
+   "held": true
+  },
+  "P1": {
+   "detail": "max ||U'U-I|| 7.22e-14, max |det U-1| 7.83e-14",
+   "held": true
+  },
+  "P2": {
+   "detail": "max d(A'Ax, x) 3.26e-15",
+   "held": true
+  },
+  "P3": {
+   "detail": "min ||[Ai,Aj]|| over 28 pairs 0.2352",
+   "held": true
+  },
+  "P4": {
+   "detail": "slope 2.0000, h(0.001)/0.001^2 / ||[X,Y]|| = 1.000000",
+   "held": true
+  },
+  "P5": {
+   "detail": "checker PASS, worst | ||x_k|| - 1 | 2.11e-15",
+   "held": true
+  },
+  "P6": {
+   "detail": "|d(Ux,Ux') - d(x,x')| 4.15e-17 (d(x,x') = 9.903e-07)",
+   "held": true
+  },
+  "P7": {
+   "detail": "seed 1 twice: b9e9b84f9688c364 b9e9b84f9688c364; seed 2: 68243756c48f906d",
+   "held": true
+  }
+ },
+ "seed": 1,
+ "slope": 1.9999801958556496,
+ "state_holonomy": 0.03783367183794865
+}

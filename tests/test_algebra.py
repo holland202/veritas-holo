@@ -94,6 +94,6 @@ def test_e001_verdicts_depend_on_the_data(name, monkeypatch):
     monkeypatch.setattr(run, "random_hermitian", lambda n, r, **k: random_diagonal_hermitian(n, r))
     out, _ = run.run(1)
     if name == "P3":
-        assert out["P3"][0] is False  # diagonal operators commute: noncommutativity must fail
+        assert bool(out["P3"][0]) is False  # diagonal operators commute: noncommutativity must fail
     else:
-        assert out[name][0] is True  # the nulls and the invariant are unaffected
+        assert bool(out[name][0]) is True  # the nulls and the invariant are unaffected

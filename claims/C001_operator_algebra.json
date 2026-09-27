@@ -1,0 +1,5 @@
+{"id": "C001", "status": "TESTED",
+ "claim": "The reference implementation obeys SU(n) closure, inverse, commutator, holonomy-scaling, norm-invariant and replay properties at n = 32.",
+ "experiment": "E001", "predictions": ["P1", "P2", "P3", "P4", "P5", "P6", "P7"], "nulls": ["N3", "N4", "N5"],
+ "evidence": "results/verified/E001_seed1_x86_64.json",
+ "limits": "Implementation test only; one platform; says nothing about reasoning."}

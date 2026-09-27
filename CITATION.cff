@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "veritas-holo: a falsifiable geometric reasoning substrate"
+authors:
+  - family-names: Holland
+    given-names: Chad Edward
+version: 0.1.0
+date-released: 2026-09-27
+license: MIT
+repository-code: "https://github.com/holland202/veritas-holo"

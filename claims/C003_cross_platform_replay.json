@@ -1,0 +1,4 @@
+{"id": "C003", "status": "PROPOSED",
+ "claim": "E001's seed-1 replay digest is identical on aarch64 (S25, Termux) and x86_64.",
+ "experiment": "E001", "predictions": ["P9"],
+ "limits": "May fail on different BLAS/LAPACK builds; if so, replay is per platform."}
