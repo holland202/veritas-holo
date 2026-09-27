@@ -174,9 +174,12 @@ def e007():
     ax.set_xlabel("accuracy at L = 160 on words WITHOUT the held-out transitions")
     ax.set_ylabel("accuracy WITH them")
     ax.legend(frameon=False, loc="upper left", fontsize=9)
-    title(ax, "E007: learned operators handle transitions they never saw; a transition memoriser cannot",
+    title(ax, "E007: transitions never seen in training",
           "40 registered seeds per arm. Top right: learned what it saw and composed the rest. "
-          "Bottom right: learned what it saw, nothing else.")
+          "Bottom right: learned what it saw, nothing else. A transition memoriser cannot compose.")
+    for arm, y, dy in (("HELDOUT", 1.0, -0.09), ("PAIR", 0.0, 0.07)):
+        n = sum(1 for r in runs if r["arm"] == arm and r["clean160"] >= 0.99)
+        ax.text(0.985, y + dy, f"{n} runs here", ha="right", color=INK2, fontsize=8)
     save(fig, "E007_heldout_composition.png")
 
 
