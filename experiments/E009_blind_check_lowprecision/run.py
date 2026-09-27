@@ -12,7 +12,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--partial", default=None)
     ap.add_argument("--json", default=None)
+    ap.add_argument("--seeds", default=None, help="A-B inclusive, for a replication subset (default: the registered 501-540)")
     a = ap.parse_args()
+    global SEEDS
+    if a.seeds:
+        lo, hi = (int(x) for x in a.seeds.split("-"))
+        SEEDS = list(range(lo, hi + 1))
     done = {}
     if a.partial and os.path.exists(a.partial):
         for ln in open(a.partial, encoding="utf-8"):
