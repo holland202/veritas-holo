@@ -57,12 +57,30 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--jobs", type=int, default=1)
     ap.add_argument("--json", default=None)
+    ap.add_argument("--partial", default=None, help="JSONL of finished seeds: appended per seed, reused on restart")
     a = ap.parse_args()
+    done = {}
+    if a.partial and os.path.exists(a.partial):
+        with open(a.partial, encoding="utf-8") as fh:
+            for ln in fh:
+                r = json.loads(ln)
+                done[r["seed"]] = r
+    todo = [s for s in SEEDS if s not in done]
+
+    def keep(r):
+        done[r["seed"]] = r
+        if a.partial:
+            with open(a.partial, "a", encoding="utf-8") as fh:
+                fh.write(json.dumps(r, sort_keys=True) + "\n")
+
     if a.jobs > 1:
         with ProcessPoolExecutor(a.jobs) as ex:
-            runs = list(ex.map(one, SEEDS))
+            for r in ex.map(one, todo):
+                keep(r)
     else:
-        runs = [one(s) for s in SEEDS]
+        for s in todo:
+            keep(one(s))
+    runs = [done[s] for s in SEEDS]
     assert all(r["decided_at"] < r["tested_at"] for r in runs), "a decision was recorded after its test"
     ok = lambda r: r["acc160"] >= 0.99  # noqa: E731
     print(f"VERITAS-HOLO E006 | seeds {SEEDS[0]}-{SEEDS[-1]} | {platform.machine()} | Python {platform.python_version()} "
