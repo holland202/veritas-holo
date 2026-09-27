@@ -18,6 +18,6 @@ L = 10000.
   510}. This could fail even if R1 holds: aarch64 and x86_64 BLAS round differently, and 3000 training
   steps can amplify that into a different outcome. If R2 fails, the note records which seeds changed.
 
-**What this does not test.** float16 *arithmetic*. The float16 path stores the state in float16 after
-each step and computes in float64, as in the container. Native half-precision matmul on the Adreno
+**What this does not test.** float16 *arithmetic*. The float16 path rounds the operators and, after
+each step, the state to float16, but multiplies in float64, as in the container. Native half-precision matmul on the Adreno
 GPU is a separate, unrun question.
