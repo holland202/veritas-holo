@@ -1,6 +1,18 @@
-{"id": "C002", "status": "PROPOSED",
+{
+ "id": "C002",
+ "status": "REFUTED",
  "claim": "Holonomy along operator paths chosen to solve a task carries information that a spectrum-matched sham cannot.",
- "experiment": "E002", "predictions": ["P8"],
+ "experiment": "E002",
+ "predictions": [
+  "P8"
+ ],
  "null": "sham operators with the same eigenvalue spectra and randomised eigenvectors, same cost and dimension",
- "requires": ["a registered task and score before any run", "sealed test data", "at least 20 seeds", "replication"],
- "limits": "Not built. The task must be defined first."}
+ "requires": [
+  "a registered task and score before any run",
+  "sealed test data",
+  "at least 20 seeds",
+  "replication"
+ ],
+ "limits": "Not built. The task must be defined first.",
+ "result": "E002 E3: the spectrum-matched sham (same eigenvalues, randomised eigenvectors) read out signed area with held-out R2 1.0000, as well as any arm. The premise that such a sham destroys the structure is wrong: small-loop holonomy depends on noncommutativity, which the sham keeps."
+}

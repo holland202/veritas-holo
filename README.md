@@ -14,8 +14,9 @@ Nothing in this repository answers that yet. What exists is the first instrument
 | experiment | what it asks | status |
 |---|---|---|
 | [E001](experiments/E001_operator_algebra/) | does the reference implementation obey the algebra (closure, inverse, commutators, holonomy, invariants, replay)? | **10 of 10 held** on x86_64 and on the S25; byte replay across platforms refuted (P9), replay to 10 decimals replicated (P10) |
-| E002 | does holonomy along task-solving paths carry information a matched sham cannot? (P8) | registered, not built |
-| language models | only after E002 | not started |
+| [E002](experiments/E002_holonomy_area/) | what does holonomy carry, and does it beat a cheap exact computation? | **6 of 6 held**: it carries signed area for any noncommuting operators (P8's sham included); the shoelace formula gets it exactly for far less. **No advantage.** |
+| E003 | a task whose holonomy information no equal-cost classical recurrence computes (E7) | not found yet |
+| language models | only after a task with an advantage exists | not started |
 
 **v0.1 is a pure mathematical reference implementation.** No language model, no GPU, no NPU. Every
 property E001 checks is a known property of unitary matrices; passing it shows the instrument
