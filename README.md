@@ -1,3 +1,5 @@
+![veritas-holo](figures/banner.png)
+
 # veritas-holo
 
 **A falsifiable geometric reasoning substrate: finite-state manifolds, operator dynamics and
@@ -35,6 +37,18 @@ A language model, when one is added, may only *propose* transitions. The engine 
 invariants check them, and the result is recorded. The model proposes; the mathematics disposes.
 
 ## What works so far
+
+<p>
+<img src="figures/E004_state_tracking.png" width="49%" alt="E004 accuracy by arm">
+<img src="figures/E005_learned_extrapolation.png" width="49%" alt="E005 accuracy at length 160 by seed">
+</p>
+<p>
+<img src="figures/E002_area_readout.png" width="49%" alt="E002 R-squared by arm">
+<img src="figures/E006_restart_diagnostic.png" width="49%" alt="E006 relator score against success">
+</p>
+
+Every figure is drawn by `scripts/make_figures.py` from the committed result files, not from typed
+numbers. E006's panel shows the exploratory pilot until the registered run finishes.
 
 - A fingerprint for concurrent logs that ignores harmless reordering and merges from fingerprints
   alone (E003).
