@@ -1,0 +1,5 @@
+{"id": "C005", "status": "REPLICATED",
+ "claim": "E001's trajectories replay identically on aarch64 (S25) and x86_64 when states are rounded to 10 decimal places before hashing.",
+ "experiment": "E001", "predictions": ["P10"],
+ "evidence": "experiments/E001_operator_algebra/RESULTS.md (P10 sections): seeds 1-5, identical digests on both platforms",
+ "limits": "Five seeds, two platforms, one author. A value on a rounding boundary would break it; not observed."}

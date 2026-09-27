@@ -100,3 +100,20 @@ seed 3  958217cbd993dc68de4bec7928eac9f61579a24b17f13e9d4c15d8cbbed54022
 seed 4  0ce75d98dbe5a24d25d26097e69d6a71f6a06d5c5b3c39dc68b5b8a711f80ca0
 seed 5  833b7caa8e650ea90eaf3ef4bedb7ff3fe54d6f6f0597ac0c8c6b83a3ef9897d
 ```
+
+## P10 on the S25 (Termux, aarch64), same day
+
+```
+rounded digest (10 dp, P10) a20f68e73d04bbf7d6b322884859725e940c4f3505ba02377f100bb9efbb068b VERDICT  10 of 10 registered predictions and nulls held
+rounded digest (10 dp, P10) c6a52390c8b442d7d4ddee1afe33c85b85b1fe5916db4a4b12691d3961720055 VERDICT  10 of 10 registered predictions and nulls held
+rounded digest (10 dp, P10) 958217cbd993dc68de4bec7928eac9f61579a24b17f13e9d4c15d8cbbed54022 VERDICT  10 of 10 registered predictions and nulls held
+rounded digest (10 dp, P10) 0ce75d98dbe5a24d25d26097e69d6a71f6a06d5c5b3c39dc68b5b8a711f80ca0 VERDICT  10 of 10 registered predictions and nulls held
+rounded digest (10 dp, P10) 833b7caa8e650ea90eaf3ef4bedb7ff3fe54d6f6f0597ac0c8c6b83a3ef9897d VERDICT  10 of 10 registered predictions and nulls held
+```
+
+**P10 confirmed.** Seeds 1-5: all five rounded digests identical to the x86_64 ones recorded before
+this run, and 10 of 10 held on every seed on both platforms. So E001's trajectories replay across
+Arm (Qualcomm Oryon) and x86 (Intel Xeon) to 10 decimal places; the raw-byte digest (P9) does not.
+The stated way it could still fail, a value landing on a rounding boundary, did not happen in
+these 5 x 13 states; it remains possible for other seeds and is why the claim is "5 seeds", not
+"always".

@@ -13,7 +13,7 @@ Nothing in this repository answers that yet. What exists is the first instrument
 
 | experiment | what it asks | status |
 |---|---|---|
-| [E001](experiments/E001_operator_algebra/) | does the reference implementation obey the algebra (closure, inverse, commutators, holonomy, invariants, replay)? | **10 of 10 held** on x86_64 and on the S25; cross-platform byte replay refuted (P9) |
+| [E001](experiments/E001_operator_algebra/) | does the reference implementation obey the algebra (closure, inverse, commutators, holonomy, invariants, replay)? | **10 of 10 held** on x86_64 and on the S25; byte replay across platforms refuted (P9), replay to 10 decimals replicated (P10) |
 | E002 | does holonomy along task-solving paths carry information a matched sham cannot? (P8) | registered, not built |
 | language models | only after E002 | not started |
 
