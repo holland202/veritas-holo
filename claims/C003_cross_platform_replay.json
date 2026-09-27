@@ -1,4 +1,12 @@
-{"id": "C003", "status": "PROPOSED",
+{
+ "id": "C003",
+ "status": "REFUTED",
  "claim": "E001's seed-1 replay digest is identical on aarch64 (S25, Termux) and x86_64.",
- "experiment": "E001", "predictions": ["P9"],
- "limits": "May fail on different BLAS/LAPACK builds; if so, replay is per platform."}
+ "experiment": "E001",
+ "predictions": [
+  "P9"
+ ],
+ "limits": "May fail on different BLAS/LAPACK builds; if so, replay is per platform.",
+ "result": "S25 aarch64 digest 8f42fa22... vs x86_64 b9e9b84f...; all ten verdicts and every printed value agree, raw-byte digests do not.",
+ "next": "P10: digest over states rounded to 10 decimals (registered, not run)."
+}

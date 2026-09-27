@@ -51,3 +51,37 @@ Full record: `results/verified/E001_seed1_x86_64.json`.
 - **P8** (E002): does holonomy along task-solving paths carry information a matched sham cannot?
 - **P9**: the seed-1 digest on the S25 (aarch64). Command:
   `python experiments/E001_operator_algebra/run.py --json results/registered/E001_seed1_aarch64.json`
+
+## P9 on the S25 (Termux, aarch64, Python 3.14.6, NumPy 2.4.4), 2026-09-27
+
+```
+VERITAS-HOLO E001 | seed 1 | aarch64 | Python 3.14.6 | NumPy 2.4.4
+state dimension 32, operators 8, trajectory length 12
+HELD   P1  max ||U'U-I|| 6.87e-14, max |det U-1| 7.16e-14
+HELD   P2  max d(A'Ax, x) 3.07e-15
+HELD   P3  min ||[Ai,Aj]|| over 28 pairs 0.2352
+HELD   N3  max ||[Di,Dj]|| over 28 diagonal pairs 1.94e-16
+HELD   P4  slope 2.0000, h(0.001)/0.001^2 / ||[X,Y]|| = 1.000000
+HELD   N4  max h(eps) for diagonal X, Y 7.20e-16
+HELD   P5  checker PASS, worst | ||x_k|| - 1 | 2.66e-15
+HELD   N5  checker FAIL, worst | ||x_k|| - 1 | 0.0818
+HELD   P6  |d(Ux,Ux') - d(x,x')| 1.70e-17 (d(x,x') = 9.903e-07)
+HELD   P7  seed 1 twice: 8f42fa22d14b5d6e 8f42fa22d14b5d6e; seed 2: f252ca0984c04411
+state holonomy d(A1 A2 A1' A2' x, x) = 0.0378  (reported, not predicted)
+replay digest 8f42fa22d14b5d6eb74ce79613a66cea545ff29ffa938db802c3c12d6a98c2d9
+VERDICT  10 of 10 registered predictions and nulls held
+```
+
+- **All ten held on the phone too.** Every value printed at four or more digits is the same as on
+  x86_64 (0.2352, slope 2.0000, ratio 1.000000, 0.0818, 0.0378); only the rounding-level residues
+  differ (e.g. N3: 1.94e-16 here, 0.00e+00 there).
+- **P9 refuted.** The replay digest differs: `8f42fa22…` on the S25, `b9e9b84f…` on x86_64. Replay
+  is exact per platform (P7 held on both) but not across them: the states agree to rounding and
+  differ in their last bits, which a sha256 over raw bytes sees. The registration expected this was
+  possible ("different BLAS and LAPACK builds"); it is now measured. Same lesson as
+  sovereign-veritas's model replies: a byte-level fingerprint is a claim about the exact kernels
+  that ran.
+- **P10 (registered, not run):** a digest over the states rounded to 10 decimal places matches on
+  both platforms for seeds 1 to 5. The worst differences seen here are around 1e-14, so rounding at
+  1e-10 should absorb them, unless a value sits on a rounding boundary; that is the way it could
+  fail.
