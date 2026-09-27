@@ -1,0 +1,27 @@
+VERITAS-HOLO E010 (A5) | seeds 101-110 | x86_64 | Python 3.11.15 | NumPy 2.4.4
+A5 by three 3-cycles a,b,c; held-out ordered pairs (a,b) and (b,c); readout fitted on CLEAN long words; scored on CLEAN and HELD
+seed     arm  clean40   held40  clean160  held160
+ 101 HELDOUT   1.0000   1.0000    1.0000   1.0000
+ 101    PAIR   1.0000   0.0140    1.0000   0.0155
+ 102 HELDOUT   1.0000   1.0000    1.0000   1.0000
+ 102    PAIR   1.0000   0.0180    1.0000   0.0135
+ 103 HELDOUT   1.0000   1.0000    1.0000   1.0000
+ 103    PAIR   1.0000   0.0140    1.0000   0.0210
+ 104 HELDOUT   1.0000   1.0000    1.0000   1.0000
+ 104    PAIR   1.0000   0.0200    1.0000   0.0160
+ 105 HELDOUT   1.0000   1.0000    1.0000   1.0000
+ 105    PAIR   1.0000   0.0120    1.0000   0.0170
+ 106 HELDOUT   1.0000   1.0000    1.0000   1.0000
+ 106    PAIR   1.0000   0.0180    1.0000   0.0150
+ 107 HELDOUT   1.0000   1.0000    1.0000   1.0000
+ 107    PAIR   1.0000   0.0185    1.0000   0.0165
+ 108 HELDOUT   1.0000   1.0000    1.0000   1.0000
+ 108    PAIR   1.0000   0.0210    1.0000   0.0160
+ 109 HELDOUT   1.0000   1.0000    1.0000   1.0000
+ 109    PAIR   1.0000   0.0120    1.0000   0.0150
+ 110 HELDOUT   1.0000   1.0000    1.0000   1.0000
+ 110    PAIR   1.0000   0.0155    1.0000   0.0155
+HELD   H1  10 HELDOUT runs learned CLEAN words (need >= 5); HELD accuracy at L=160 on them: 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000 (all >= 0.99)
+HELD   H2  PAIR HELD accuracy at L=160, max over 10 seeds: 0.0210 (< 0.05)
+HELD   H3  10 PAIR runs learned CLEAN words (>= 1), so the null is not just a weak learner
+VERDICT  3 of 3 registered predictions held
