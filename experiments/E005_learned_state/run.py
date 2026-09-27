@@ -111,6 +111,9 @@ def main():
                f"successful seeds' min relator eigenvalues near 1: "
                f"{', '.join(str(min(r['relator_eig_near_1'].values())) for r in win) or 'none'} (each >= 4 of {DIM})"),
     }
+    if sorted(a.seeds) != [1, 2, 3, 4, 5]:
+        v.pop("L1")
+        print("PARTIAL L1  registered over seeds 1-5 together; not evaluated on a partial run")
     for k, (ok, d) in v.items():
         print(f"{'HELD  ' if ok else 'FAILED'} {k}  {d}")
     held = sum(ok for ok, _ in v.values())
