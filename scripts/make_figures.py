@@ -130,8 +130,30 @@ def e006():
     ax.set_ylim(-0.4, 1.4)
     ax.set_xlabel("relator score of the trained operators (eigenvalues near 1, of 8), measured before any test")
     ax.legend(frameon=False, loc="upper left", fontsize=8)
-    title(ax, "E006: does the trained model show whether training worked?", tag)
+    title(ax, "E006: a registered rule-count check predicted which S5 runs would extrapolate", tag + "; the check uses the known S5 relations and is read before any test")
     save(fig, "E006_restart_diagnostic.png")
+
+
+def e006_policy():
+    path = os.path.join(ROOT, "results", "verified", "E006_x86_64.json")
+    if not os.path.exists(path):
+        return
+    d = json.load(open(path, encoding="utf-8"))
+    policy = sum(j["success"] for j in d["jobs"])
+    blind = sum(d["blind_first_seed"])
+    n = len(d["jobs"])
+    fig, ax = plt.subplots(figsize=(7.6, 3.0))
+    ax.barh(["restart until the check accepts", "take the first run, no check"], [policy, blind], color=[S1, S2],
+            height=0.5)
+    for i, v in enumerate([policy, blind]):
+        ax.text(v + 0.15, i, f"{v} of {n}", va="center", color=INK2, fontsize=9)
+    ax.set_xlim(0, n + 1.5)
+    ax.set_xlabel(f"groups of 4 seeds that ended with a working model (of {n})")
+    ax.grid(axis="y", visible=False)
+    trainings = np.mean([j["trainings"] for j in d["jobs"]])
+    title(ax, "E006: restarting on the registered check makes training dependable",
+          f"Same 40 fresh seeds, grouped in 10 fours. Mean trainings per group with the check: {trainings:.2f}.")
+    save(fig, "E006_restart_policy.png")
 
 
 def banner():
@@ -176,4 +198,5 @@ if __name__ == "__main__":
     e004()
     e005()
     e006()
+    e006_policy()
     print("wrote", sorted(os.listdir(OUT)))

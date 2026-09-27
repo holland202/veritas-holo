@@ -47,6 +47,7 @@ invariants check them, and the result is recorded. The model proposes; the mathe
 <img src="figures/E002_area_readout.png" width="49%" alt="E002 R-squared by arm">
 <img src="figures/E006_restart_diagnostic.png" width="49%" alt="E006 relator score against success">
 </p>
+<p><img src="figures/E006_restart_policy.png" width="49%" alt="E006 restart policy against blind choice"></p>
 
 Every figure is drawn by `scripts/make_figures.py` from the committed result files, not from typed
 numbers. 
@@ -56,8 +57,9 @@ numbers.
 - Relation-respecting operators track the S5 state exactly at every tested length (up to 160), while
   a commuting diagonal recurrence is limited to letter-count information (E004). The diagonal arm is
   a mathematical control, not an implementation of any particular state-space model.
-- A check read from the trained operators, before any test, tells working training runs from failed
-  ones (17 of 17 each way, E006), so the unreliable training becomes reliable by restarting.
+- A registered rule-count check, read from the trained operators before any test, predicted which S5
+  training runs would extrapolate to length 160 (17 of 17 each way; score 4 ambiguous). The check
+  uses the known S5 relations. Restarting on it gave a working model in 9 of 10 groups (E006).
 - Training on labelled words of length ≤ 8 can find S5-tracking operators: on 3 of 5 registered seeds
   they were exact at length 160, 20× the longest training word. The readout was fitted on labelled
   long words; the operators never saw one. On 2 of 5 seeds training failed (E005).
