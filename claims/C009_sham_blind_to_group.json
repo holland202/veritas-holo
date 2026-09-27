@@ -1,0 +1,9 @@
+{
+ "id": "C009",
+ "status": "REFUTED",
+ "claim": "A spectrum-matched sham of the S5 representation carries no state-tracking signal at L=40 (accuracy < 0.05).",
+ "experiment": "E004",
+ "predictions": ["G5"],
+ "evidence": "results/verified/E004_x86_64.json",
+ "limits": "Measured 0.0747 at L=40; 0.0070 at L=160. Exploratory diagnosis: the relations the sham keeps (t^2=1, c^5=1) collapse words to reduced words, and 23% of test reduced words at L=40 had been seen in training, 0% at L=160. Kept as a refutation."
+}

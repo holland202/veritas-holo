@@ -16,6 +16,7 @@ Nothing in this repository answers that yet. What exists is the first instrument
 | [E001](experiments/E001_operator_algebra/) | does the reference implementation obey the algebra (closure, inverse, commutators, holonomy, invariants, replay)? | **10 of 10 held** on x86_64 and on the S25; byte replay across platforms refuted (P9), replay to 10 decimals replicated (P10) |
 | [E002](experiments/E002_holonomy_area/) | what does holonomy carry, and does it beat a cheap exact computation? | **6 of 6 held** on x86_64 and on the S25: it carries signed area for any noncommuting operators (P8's sham included); the shoelace formula gets it exactly for far less. **No advantage.** |
 | [E003](experiments/E003_trace_fingerprint/) | can a holonomy fingerprint concurrent histories, forgiving legal reorderings and merging from fingerprints alone? | **8 of 8 held** on x86_64 and on the S25: exact on 3000 of 3000 pairs; merge time flat from 100 to 100,000 events. The advantage is composition, not information or speed. |
+| [E004](experiments/E004_group_state/) | which kinds of recurrent state can track S5, the group behind the state-space-model limits? | **4 of 6 held, 2 FAILED (kept)**: relation-respecting operators exact at L=40, 160; commuting ones capped by letter counts; relation-free ones at chance. G1 failed on a readout flaw; G5's sham kept a fading signal. |
 | E7 | a task whose holonomy information no equal-cost classical recurrence computes | not found yet |
 | language models | only after a task with an advantage exists | not started |
 
@@ -33,6 +34,10 @@ A language model, when one is added, may only *propose* transitions. The engine 
 invariants check them, and the result is recorded. The model proposes; the mathematics disposes.
 
 ## Method
+
+New and conceptual ideas are welcome here, including ones outside the usual toolkit. An idea stays
+only if it is registered, run, and verified; otherwise it is recorded as refuted.
+
 
 Every claim has a registered prediction written before the code that tests it, a null control that
 must come out the other way (so a checker that always passes is caught), and a status:

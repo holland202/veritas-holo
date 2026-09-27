@@ -1,0 +1,9 @@
+{
+ "id": "C008",
+ "status": "TESTED",
+ "claim": "On S5 state tracking, holonomy of operators that satisfy the group's relations is exact at L=40 and 160; commuting (diagonal) holonomy is capped by letter counts; noncommuting operators that satisfy no relations score at chance.",
+ "experiment": "E004",
+ "predictions": ["G1 (L=40, 160 only)", "G2", "G3", "G4", "G6"],
+ "evidence": "results/verified/E004_x86_64.json",
+ "limits": "G1 as registered FAILED at L=10: the centroid readout cannot name a class absent from training (3 of 2000 words, seed 2). One group, one readout, x86_64 only. A lookup table is exact everywhere: no advantage over classical computation. The expressivity result is prior work (Merrill, Petty & Sabharwal 2024)."
+}
