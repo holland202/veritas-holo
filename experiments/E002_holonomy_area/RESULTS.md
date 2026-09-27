@@ -49,3 +49,21 @@ veritas-holo still has **no candidate for a reasoning advantage**. The open ques
 a task where a path's holonomy carries information that no equal-cost classical recurrence
 computes. Signed area is not it. Until one is found and registered, C004 stays PROPOSED with nothing
 behind it.
+
+## Replication on the S25 (2026-09-27, pasted by the operator)
+
+```
+VERITAS-HOLO E002 | seeds 1-20 | aarch64 | Python 3.14.6 | NumPy 2.4.4
+paths: balanced words of length 40, 200 train + 200 held-out per seed; signed-area sd 5.70
+sham check: max |eig(Y_sham) - eig(Y)| 9.99e-16
+arm                mean R2     min R2
+SU2                 0.9999     0.9999
+SU32-RANDOM         1.0000     1.0000
+SPECTRUM-SHAM       1.0000     1.0000
+ABELIAN            -0.0036    -0.0159
+SU2-LARGE          -0.0018    -0.0701
+SHOELACE            1.0000     1.0000
+VERDICT  6 of 6 registered predictions held
+```
+
+Every printed value matches x86_64. C006 moves from TESTED to REPLICATED.

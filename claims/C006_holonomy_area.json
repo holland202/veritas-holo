@@ -1,6 +1,6 @@
 {
  "id": "C006",
- "status": "TESTED",
+ "status": "REPLICATED",
  "claim": "For balanced step words with small step size, the holonomy of any noncommuting generator pair carries the path's signed area (held-out R2 > 0.99 from one linear readout); commuting generators carry none.",
  "experiment": "E002",
  "predictions": [
@@ -11,5 +11,5 @@
   "E5"
  ],
  "evidence": "results/verified/E002_x86_64.json",
- "limits": "One task family, length 40, one readout, x86_64 only. The same area is computed exactly and far more cheaply by the shoelace formula (E6): no advantage."
+ "limits": "One task family, length 40, one readout, x86_64 and the S25 (aarch64, 2026-09-27) agree on every printed value. The same area is computed exactly and far more cheaply by the shoelace formula (E6): no advantage."
 }
