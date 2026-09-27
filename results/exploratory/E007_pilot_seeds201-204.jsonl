@@ -1,0 +1,8 @@
+{"seed": 201, "arm": "HELDOUT", "n_train": 790, "labels_covered": 65, "score": 5, "clean40": 0.294, "held40": 0.186, "clean160": 0.0205, "held160": 0.018, "s": 42}
+{"seed": 201, "arm": "FULL", "n_train": 1364, "labels_covered": 71, "score": 5, "clean40": 0.998, "held40": 1.0, "clean160": 1.0, "held160": 1.0, "s": 42}
+{"seed": 202, "arm": "HELDOUT", "n_train": 790, "labels_covered": 65, "score": 7, "clean40": 1.0, "held40": 1.0, "clean160": 1.0, "held160": 1.0, "s": 42}
+{"seed": 202, "arm": "FULL", "n_train": 1364, "labels_covered": 71, "score": 3, "clean40": 0.1585, "held40": 0.1305, "clean160": 0.013, "held160": 0.017, "s": 42}
+{"seed": 203, "arm": "HELDOUT", "n_train": 790, "labels_covered": 65, "score": 4, "clean40": 0.19, "held40": 0.1245, "clean160": 0.015, "held160": 0.0185, "s": 41}
+{"seed": 203, "arm": "FULL", "n_train": 1364, "labels_covered": 71, "score": 1, "clean40": 0.6705, "held40": 0.5235, "clean160": 0.047, "held160": 0.0195, "s": 41}
+{"seed": 204, "arm": "HELDOUT", "n_train": 790, "labels_covered": 65, "score": 3, "clean40": 0.502, "held40": 0.3475, "clean160": 0.0265, "held160": 0.017, "s": 42}
+{"seed": 204, "arm": "FULL", "n_train": 1364, "labels_covered": 71, "score": 3, "clean40": 0.4775, "held40": 0.3425, "clean160": 0.025, "held160": 0.0205, "s": 42}
