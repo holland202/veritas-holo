@@ -29,5 +29,6 @@ relator idea, the thing that predicted training success, now used as a repair st
 diagnostic.
 
 **Limits.** S5, one presentation, three hand-chosen relators, one noise model, dimension 5. The
-orders come from labels. R7 (finding the orders from the operators alone) and repairing failed E005
-training runs are open.
+orders come from labels. R7 (finding the orders from the operators alone) is open. Repairing failed E005
+training runs was tried as an unregistered pilot and did not work: 0 of 6 repaired
+(`results/exploratory/E012_repair_pilot.md`).
