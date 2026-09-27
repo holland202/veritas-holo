@@ -15,4 +15,5 @@ and the result file that shows the verdict.
 | C008 | TESTED | relation-respecting holonomy tracks S5 exactly at L=40, 160; commuting holonomy is capped by letter counts; relation-free noncommuting holonomy is at chance (E004) |
 | C009 | REFUTED | a spectrum-matched sham carries no S5 signal at L=40: it carried 0.0747 (E004, G5) |
 | C010 | TESTED | gradient descent learns S5 state tracking from words <= 8 and extrapolates to 160 (3 of 5 seeds), building in the relations; commuting training cannot (E005) |
+| C011 | TESTED | a relator score read from the trained operators before any test separates working from failed training runs: 17/17 accepted succeeded, 17/17 low scores failed (E006) |
 | C004 | PROPOSED | the geometric layer improves a local LLM's reasoning beyond a sham |

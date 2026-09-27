@@ -1,0 +1,14 @@
+{
+ "id": "C011",
+ "status": "TESTED",
+ "claim": "A relator score computed from the trained operators alone (before any test) separates successful from failed S5 training runs: on 40 fresh seeds, all 17 runs scoring >= 5 succeeded at L=160 and all 17 scoring <= 3 failed; accepting the first run scoring >= 5 in each group of 4 delivered a working model in 9 of 10 groups (blind choice: 2 of 10).",
+ "experiment": "E006",
+ "predictions": [
+  "D1",
+  "D2",
+  "D3",
+  "D4"
+ ],
+ "evidence": "results/verified/E006_x86_64.json",
+ "limits": "The score uses S5's known relations (a mechanistic diagnostic, not self-assessment); score 4 is ambiguous (4 of 6 succeeded); one group and width; x86_64 only; D1, D2 and D4 are not independent."
+}

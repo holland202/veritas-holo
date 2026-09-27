@@ -1,0 +1,761 @@
+{
+ "blind_first_seed": [
+  true,
+  false,
+  false,
+  true,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false
+ ],
+ "experiment": "E006",
+ "jobs": [
+  {
+   "success": true,
+   "trainings": 1
+  },
+  {
+   "success": true,
+   "trainings": 2
+  },
+  {
+   "success": true,
+   "trainings": 4
+  },
+  {
+   "success": true,
+   "trainings": 2
+  },
+  {
+   "success": true,
+   "trainings": 2
+  },
+  {
+   "success": true,
+   "trainings": 3
+  },
+  {
+   "success": true,
+   "trainings": 4
+  },
+  {
+   "success": true,
+   "trainings": 2
+  },
+  {
+   "success": true,
+   "trainings": 3
+  },
+  {
+   "success": false,
+   "trainings": 4
+  }
+ ],
+ "machine": "x86_64",
+ "numpy": "2.4.4",
+ "python": "3.11.15",
+ "runs": [
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    6,
+    6,
+    6,
+    5,
+    6
+   ],
+   "decided_at": 1790513961.0969815,
+   "decision": "ACCEPT",
+   "score": 5,
+   "seconds": 51.05106449127197,
+   "seed": 41,
+   "tested_at": 1790513962.2575188
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    8,
+    6,
+    6,
+    6,
+    6
+   ],
+   "decided_at": 1790513961.5959506,
+   "decision": "ACCEPT",
+   "score": 6,
+   "seconds": 51.47066354751587,
+   "seed": 42,
+   "tested_at": 1790513962.6799726
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "decided_at": 1790514011.6318882,
+   "decision": "ACCEPT",
+   "score": 8,
+   "seconds": 50.48602056503296,
+   "seed": 43,
+   "tested_at": 1790514012.7440643
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    7,
+    7,
+    7,
+    7,
+    7
+   ],
+   "decided_at": 1790514012.3358405,
+   "decision": "ACCEPT",
+   "score": 7,
+   "seconds": 50.73166465759277,
+   "seed": 44,
+   "tested_at": 1790514013.411859
+  },
+  {
+   "acc160": 0.0145,
+   "acc40": 0.301,
+   "counts": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "decided_at": 1790514061.9623988,
+   "decision": "REJECT",
+   "score": 1,
+   "seconds": 50.229798793792725,
+   "seed": 45,
+   "tested_at": 1790514062.9744236
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "decided_at": 1790514062.3497224,
+   "decision": "ACCEPT",
+   "score": 6,
+   "seconds": 49.94680905342102,
+   "seed": 46,
+   "tested_at": 1790514063.3589242
+  },
+  {
+   "acc160": 0.0155,
+   "acc40": 0.384,
+   "counts": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "decided_at": 1790514111.7911546,
+   "decision": "REJECT",
+   "score": 2,
+   "seconds": 49.92096567153931,
+   "seed": 47,
+   "tested_at": 1790514112.8960135
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    7,
+    7,
+    7,
+    7,
+    7
+   ],
+   "decided_at": 1790514112.7942324,
+   "decision": "ACCEPT",
+   "score": 7,
+   "seconds": 50.48290705680847,
+   "seed": 48,
+   "tested_at": 1790514113.8424313
+  },
+  {
+   "acc160": 0.0875,
+   "acc40": 0.36,
+   "counts": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "decided_at": 1790514163.8990667,
+   "decision": "REJECT",
+   "score": 1,
+   "seconds": 52.18422985076904,
+   "seed": 49,
+   "tested_at": 1790514165.0808282
+  },
+  {
+   "acc160": 0.018,
+   "acc40": 0.3725,
+   "counts": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "decided_at": 1790514165.5578916,
+   "decision": "REJECT",
+   "score": 2,
+   "seconds": 52.80771231651306,
+   "seed": 50,
+   "tested_at": 1790514166.650387
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "decided_at": 1790514213.2917001,
+   "decision": "REJECT",
+   "score": 4,
+   "seconds": 49.25548791885376,
+   "seed": 51,
+   "tested_at": 1790514214.3368945
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    7,
+    7,
+    7,
+    7,
+    7
+   ],
+   "decided_at": 1790514214.8170042,
+   "decision": "ACCEPT",
+   "score": 7,
+   "seconds": 49.18761491775513,
+   "seed": 52,
+   "tested_at": 1790514215.83852
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "decided_at": 1790514262.9189956,
+   "decision": "REJECT",
+   "score": 4,
+   "seconds": 49.61622619628906,
+   "seed": 53,
+   "tested_at": 1790514263.953653
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    7,
+    7,
+    7,
+    7,
+    7
+   ],
+   "decided_at": 1790514264.6589162,
+   "decision": "ACCEPT",
+   "score": 7,
+   "seconds": 49.87475919723511,
+   "seed": 54,
+   "tested_at": 1790514265.7138538
+  },
+  {
+   "acc160": 0.0155,
+   "acc40": 0.4155,
+   "counts": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "decided_at": 1790514313.3373518,
+   "decision": "REJECT",
+   "score": 0,
+   "seconds": 50.542153120040894,
+   "seed": 55,
+   "tested_at": 1790514314.496396
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    8,
+    6,
+    8,
+    6,
+    6
+   ],
+   "decided_at": 1790514316.0232418,
+   "decision": "ACCEPT",
+   "score": 6,
+   "seconds": 51.39031171798706,
+   "seed": 56,
+   "tested_at": 1790514317.1046672
+  },
+  {
+   "acc160": 0.0625,
+   "acc40": 0.887,
+   "counts": [
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "decided_at": 1790517521.5473878,
+   "decision": "REJECT",
+   "score": 1,
+   "seconds": 48.96691703796387,
+   "seed": 57,
+   "tested_at": 1790517522.7773094
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    7,
+    7,
+    7,
+    7,
+    7
+   ],
+   "decided_at": 1790517521.273982,
+   "decision": "ACCEPT",
+   "score": 7,
+   "seconds": 48.70015907287598,
+   "seed": 58,
+   "tested_at": 1790517522.511162
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "decided_at": 1790517571.8970864,
+   "decision": "ACCEPT",
+   "score": 6,
+   "seconds": 50.44377064704895,
+   "seed": 59,
+   "tested_at": 1790517572.9554517
+  },
+  {
+   "acc160": 0.0175,
+   "acc40": 0.743,
+   "counts": [
+    2,
+    1,
+    2,
+    1,
+    1
+   ],
+   "decided_at": 1790517571.956208,
+   "decision": "REJECT",
+   "score": 1,
+   "seconds": 50.19498109817505,
+   "seed": 60,
+   "tested_at": 1790517572.9726844
+  },
+  {
+   "acc160": 0.0245,
+   "acc40": 0.741,
+   "counts": [
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "decided_at": 1790517622.2637467,
+   "decision": "REJECT",
+   "score": 2,
+   "seconds": 50.38654851913452,
+   "seed": 61,
+   "tested_at": 1790517623.3428898
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    4,
+    4,
+    4,
+    4,
+    5
+   ],
+   "decided_at": 1790517621.6555743,
+   "decision": "REJECT",
+   "score": 4,
+   "seconds": 49.73826837539673,
+   "seed": 62,
+   "tested_at": 1790517622.7113895
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    5,
+    5,
+    5,
+    5,
+    5
+   ],
+   "decided_at": 1790517670.754956,
+   "decision": "ACCEPT",
+   "score": 5,
+   "seconds": 49.07455015182495,
+   "seed": 63,
+   "tested_at": 1790517671.7868562
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "decided_at": 1790517671.149497,
+   "decision": "ACCEPT",
+   "score": 6,
+   "seconds": 48.789149045944214,
+   "seed": 64,
+   "tested_at": 1790517672.132671
+  },
+  {
+   "acc160": 0.0045,
+   "acc40": 0.4125,
+   "counts": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "decided_at": 1790517719.958906,
+   "decision": "REJECT",
+   "score": 1,
+   "seconds": 49.1663122177124,
+   "seed": 65,
+   "tested_at": 1790517720.9545805
+  },
+  {
+   "acc160": 0.019,
+   "acc40": 0.555,
+   "counts": [
+    3,
+    2,
+    2,
+    2,
+    3
+   ],
+   "decided_at": 1790517719.7988594,
+   "decision": "REJECT",
+   "score": 2,
+   "seconds": 48.741828203201294,
+   "seed": 66,
+   "tested_at": 1790517720.8746681
+  },
+  {
+   "acc160": 0.0145,
+   "acc40": 0.1935,
+   "counts": [
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "decided_at": 1790517769.9995074,
+   "decision": "REJECT",
+   "score": 4,
+   "seconds": 50.17618441581726,
+   "seed": 67,
+   "tested_at": 1790517771.0511456
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    8,
+    6,
+    6,
+    6,
+    6
+   ],
+   "decided_at": 1790517769.7529418,
+   "decision": "ACCEPT",
+   "score": 6,
+   "seconds": 49.84494400024414,
+   "seed": 68,
+   "tested_at": 1790517770.8001685
+  },
+  {
+   "acc160": 0.009,
+   "acc40": 0.6515,
+   "counts": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "decided_at": 1790517817.6059828,
+   "decision": "REJECT",
+   "score": 1,
+   "seconds": 47.856382608413696,
+   "seed": 69,
+   "tested_at": 1790517818.657599
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    7,
+    7,
+    7,
+    7,
+    7
+   ],
+   "decided_at": 1790517817.7922947,
+   "decision": "ACCEPT",
+   "score": 7,
+   "seconds": 47.74208331108093,
+   "seed": 70,
+   "tested_at": 1790517818.7934513
+  },
+  {
+   "acc160": 0.011,
+   "acc40": 0.712,
+   "counts": [
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "decided_at": 1790517865.7258642,
+   "decision": "REJECT",
+   "score": 2,
+   "seconds": 48.134902477264404,
+   "seed": 71,
+   "tested_at": 1790517866.7938573
+  },
+  {
+   "acc160": 0.0155,
+   "acc40": 0.262,
+   "counts": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "decided_at": 1790517866.1330693,
+   "decision": "REJECT",
+   "score": 2,
+   "seconds": 48.366395473480225,
+   "seed": 72,
+   "tested_at": 1790517867.160063
+  },
+  {
+   "acc160": 0.097,
+   "acc40": 0.4965,
+   "counts": [
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "decided_at": 1790517913.8176062,
+   "decision": "REJECT",
+   "score": 1,
+   "seconds": 48.23054265975952,
+   "seed": 73,
+   "tested_at": 1790517915.0252721
+  },
+  {
+   "acc160": 0.021,
+   "acc40": 0.7405,
+   "counts": [
+    3,
+    1,
+    1,
+    1,
+    2
+   ],
+   "decided_at": 1790517914.5002825,
+   "decision": "REJECT",
+   "score": 1,
+   "seconds": 48.408496618270874,
+   "seed": 74,
+   "tested_at": 1790517915.5687854
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    7,
+    7,
+    7,
+    7,
+    7
+   ],
+   "decided_at": 1790517963.2238362,
+   "decision": "ACCEPT",
+   "score": 7,
+   "seconds": 49.28828954696655,
+   "seed": 75,
+   "tested_at": 1790517964.3147707
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    7,
+    7,
+    7,
+    7,
+    7
+   ],
+   "decided_at": 1790517963.0918894,
+   "decision": "ACCEPT",
+   "score": 7,
+   "seconds": 48.684490442276,
+   "seed": 76,
+   "tested_at": 1790517964.2534828
+  },
+  {
+   "acc160": 0.017,
+   "acc40": 0.5095,
+   "counts": [
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "decided_at": 1790518012.3539789,
+   "decision": "REJECT",
+   "score": 1,
+   "seconds": 49.21664881706238,
+   "seed": 77,
+   "tested_at": 1790518013.470409
+  },
+  {
+   "acc160": 0.01,
+   "acc40": 0.3565,
+   "counts": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "decided_at": 1790518012.9750698,
+   "decision": "REJECT",
+   "score": 0,
+   "seconds": 49.70262670516968,
+   "seed": 78,
+   "tested_at": 1790518014.018057
+  },
+  {
+   "acc160": 1.0,
+   "acc40": 1.0,
+   "counts": [
+    5,
+    4,
+    4,
+    4,
+    4
+   ],
+   "decided_at": 1790518062.11194,
+   "decision": "REJECT",
+   "score": 4,
+   "seconds": 49.786543130874634,
+   "seed": 79,
+   "tested_at": 1790518063.2572448
+  },
+  {
+   "acc160": 0.017,
+   "acc40": 0.065,
+   "counts": [
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "decided_at": 1790518063.0388367,
+   "decision": "REJECT",
+   "score": 4,
+   "seconds": 50.06451344490051,
+   "seed": 80,
+   "tested_at": 1790518064.0830026
+  }
+ ],
+ "threshold": 5,
+ "verdicts": {
+  "D1": {
+   "detail": "precision of ACCEPT 1.0000 >= 0.95",
+   "held": true
+  },
+  "D2": {
+   "detail": "success among score <= 3: 0.0000 <= 0.10 (17 runs)",
+   "held": true
+  },
+  "D3": {
+   "detail": "base success rate 0.5250 in [0.5, 0.9]",
+   "held": true
+  },
+  "D4": {
+   "detail": "policy delivered a successful run in 9 of 10 jobs (>= 9)",
+   "held": true
+  }
+ }
+}

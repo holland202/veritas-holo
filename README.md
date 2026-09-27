@@ -20,6 +20,7 @@ Nothing in this repository answers that yet. What exists is the first instrument
 | [E003](experiments/E003_trace_fingerprint/) | can a holonomy fingerprint concurrent histories, forgiving legal reorderings and merging from fingerprints alone? | **8 of 8 held** on x86_64 and on the S25: exact on 3000 of 3000 pairs; merge time flat from 100 to 100,000 events. The advantage is composition, not information or speed. |
 | [E004](experiments/E004_group_state/) | which kinds of recurrent state can track S5, the group behind the state-space-model limits? | **4 of 6 held, 2 FAILED (kept)**: relation-respecting operators exact at L=40, 160; commuting ones capped by letter counts; relation-free ones at chance. G1 failed on a readout flaw; G5's sham kept a fading signal. |
 | [E005](experiments/E005_learned_state/) | can training discover a group's state from short examples, with no relations given? | **6 of 6 held**: learned from words of length ≤ 8, exact at length 160 (20× the training horizon) on 3 of 5 seeds; 2 failed; the relations appear in the learned operators; commuting training stays at the count ceiling. |
+| [E006](experiments/E006_restart_diagnostic/) | can the trained operators show, before any test, whether training worked? | **4 of 4 held**: all 17 accepted runs worked and all 17 low-score runs failed; picking by the score gave a working model in 9 of 10 groups against 2 of 10 blind. The score knows S5's relations. |
 | E7 | a task whose holonomy information no equal-cost classical recurrence computes | not found yet |
 | language models | only after a task with an advantage exists | not started |
 
@@ -48,13 +49,15 @@ invariants check them, and the result is recorded. The model proposes; the mathe
 </p>
 
 Every figure is drawn by `scripts/make_figures.py` from the committed result files, not from typed
-numbers. E006's panel shows the exploratory pilot until the registered run finishes.
+numbers. 
 
 - A fingerprint for concurrent logs that ignores harmless reordering and merges from fingerprints
   alone (E003).
 - Relation-respecting operators track the S5 state exactly at every tested length (up to 160), while
   a commuting diagonal recurrence is limited to letter-count information (E004). The diagonal arm is
   a mathematical control, not an implementation of any particular state-space model.
+- A check read from the trained operators, before any test, tells working training runs from failed
+  ones (17 of 17 each way, E006), so the unreliable training becomes reliable by restarting.
 - Training on labelled words of length ≤ 8 can find S5-tracking operators: on 3 of 5 registered seeds
   they were exact at length 160, 20× the longest training word. The readout was fitted on labelled
   long words; the operators never saw one. On 2 of 5 seeds training failed (E005).
