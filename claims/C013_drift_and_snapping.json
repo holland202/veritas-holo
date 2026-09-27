@@ -1,0 +1,14 @@
+{
+ "id": "C013",
+ "status": "TESTED",
+ "claim": "For S5 in a generic complex basis, float64 rounding drift over 1e6 steps stays below 6.5e-10 (decoding perfect), while operator error of 1e-2 destroys decoding within 1e4 steps; snapping the running state to the nearest of the 120 valid states every step restores exact decoding to 1e5 steps, and snapping too rarely (every 10 steps at error 0.1) fails.",
+ "experiment": "E008",
+ "predictions": [
+  "F1",
+  "F2",
+  "F3",
+  "F4"
+ ],
+ "evidence": "results/verified/E008_x86_64.json",
+ "limits": "One group, synthetic noise model, float64, exact codebook; chaotic continuum dynamics not covered."
+}

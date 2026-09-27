@@ -17,4 +17,5 @@ and the result file that shows the verdict.
 | C010 | TESTED | gradient descent learns S5 state tracking from words <= 8 and extrapolates to 160 (3 of 5 seeds), building in the relations; commuting training cannot (E005) |
 | C011 | TESTED | a relator score read from the trained operators before any test separates working from failed training runs: 17/17 accepted succeeded, 17/17 low scores failed (E006) |
 | C012 | TESTED | operators trained without two transitions handle them exactly (12/12 successful runs at 1.0); a transition-memorising null stays at chance on them (E007) |
+| C013 | TESTED | rounding drift in a continuum representation is negligible to 1e6 steps; operator error is what breaks decoding, and snapping to a finite codebook every step removes it (E008) |
 | C004 | PROPOSED | the geometric layer improves a local LLM's reasoning beyond a sham |

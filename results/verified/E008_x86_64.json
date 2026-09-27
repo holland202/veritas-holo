@@ -1,0 +1,56 @@
+{
+ "experiment": "E008",
+ "rows": {
+  "21": {
+   "F1_acc_1e6": 1.0,
+   "F1_dev_1e3": 6.505983197132247e-13,
+   "F1_dev_1e5": 6.481519291736273e-11,
+   "F1_dev_1e6": 6.480727258640453e-10,
+   "F2_acc": 0.0625,
+   "F3_acc": 1.0,
+   "F3_dev": 0.0,
+   "F4_every_acc": 1.0,
+   "F4_sparse_acc": 0.0
+  },
+  "22": {
+   "F1_acc_1e6": 1.0,
+   "F1_dev_1e3": 3.114053985816872e-13,
+   "F1_dev_1e5": 3.0879139476566754e-11,
+   "F1_dev_1e6": 3.0868475619466077e-10,
+   "F2_acc": 0.0,
+   "F3_acc": 1.0,
+   "F3_dev": 0.0,
+   "F4_every_acc": 1.0,
+   "F4_sparse_acc": 0.0
+  },
+  "23": {
+   "F1_acc_1e6": 1.0,
+   "F1_dev_1e3": 6.126563450663159e-13,
+   "F1_dev_1e5": 6.1153801319396e-11,
+   "F1_dev_1e6": 6.111319521477276e-10,
+   "F2_acc": 0.0,
+   "F3_acc": 1.0,
+   "F3_dev": 0.0,
+   "F4_every_acc": 1.0,
+   "F4_sparse_acc": 0.0
+  }
+ },
+ "verdicts": {
+  "F1": {
+   "detail": "max dev at 1e6 6.48e-10, 3.09e-10, 6.11e-10; growth 1e3->1e5 99.6x, 99.2x, 99.8x",
+   "held": true
+  },
+  "F2": {
+   "detail": "no snapping, delta 1e-2, L 1e4: 0.0625, 0.0000, 0.0000",
+   "held": true
+  },
+  "F3": {
+   "detail": "snap every step, delta 1e-2, L 1e5: 1.0000 (dev 0), 1.0000 (dev 0), 1.0000 (dev 0)",
+   "held": true
+  },
+  "F4": {
+   "detail": "delta 0.1: snap every 10 0.0000, 0.0000, 0.0000; snap every step 1.0000, 1.0000, 1.0000",
+   "held": true
+  }
+ }
+}

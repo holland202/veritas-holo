@@ -212,7 +212,7 @@ def banner():
     ax.text(0.6, 1.72, "veritas-holo", color="#ffffff", fontsize=38, fontweight="bold", va="center")
     ax.text(0.62, 1.02, "a falsifiable geometric state substrate — measured before it is believed", color="#c3c2b7",
             fontsize=13, va="center")
-    ax.text(0.62, 0.52, "E001–E007  ·  registered predictions  ·  null controls  ·  failures kept  ·  x86_64 + Snapdragon",
+    ax.text(0.62, 0.52, "E001–E008  ·  registered predictions  ·  null controls  ·  failures kept  ·  x86_64 + Snapdragon",
             color="#898781", fontsize=10, va="center")
     fig.savefig(os.path.join(OUT, "banner.png"), dpi=160, facecolor=fig.get_facecolor())
     plt.close(fig)
