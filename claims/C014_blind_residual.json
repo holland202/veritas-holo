@@ -1,0 +1,12 @@
+{
+ "id": "C014",
+ "status": "REFUTED",
+ "claim": "A blind training-consistency residual (threshold 0.32) separates successful from failed S5 training runs: >= 95% of accepted runs succeed and <= 10% of rejected runs do.",
+ "experiment": "E009",
+ "predictions": [
+  "B1",
+  "B2"
+ ],
+ "evidence": "results/verified/E009_x86_64.json",
+ "limits": "Measured 16/18 accepted succeeded, 6/22 rejected succeeded. Exploratory: AUC 0.904, so the residual is informative but not a gate; E006's relation-based score separated perfectly."
+}

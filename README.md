@@ -23,6 +23,7 @@ Nothing in this repository answers that yet. What exists is the first instrument
 | [E006](experiments/E006_restart_diagnostic/) | can the trained operators show, before any test, whether training worked? | **4 of 4 held**: all 17 accepted runs worked and all 17 low-score runs failed; picking by the score gave a working model in 9 of 10 groups against 2 of 10 blind. The score knows S5's relations. |
 | [E007](experiments/E007_heldout_composition/) | do learned operators handle transitions never seen in training, where a transition memoriser cannot? | **3 of 3 held**: all 12 runs that learned the seen words scored 1.0 on words full of unseen transitions; the memorising null (13 runs that learned the seen words) stayed at chance on them |
 | [E008](experiments/E008_drift_and_snapping/) | is drift unavoidable in a continuum representation, and does snapping to a finite codebook stop it? | **4 of 4 held**: rounding drift 6.5e-10 after 1e6 steps (negligible); operator error kills decoding by 1e4 steps; snapping every step restores it to 1e5 |
+| [E009](experiments/E009_blind_check_lowprecision/) | can a check that does not know the group's relations predict training success; do learned operators survive half precision? | **2 of 4 held, 2 FAILED (kept)**: the blind residual is informative (AUC 0.904) but not a gate; all 22 successful runs stayed exact at L=10000 in float16 |
 | E7 | a task whose holonomy information no equal-cost classical recurrence computes | not found yet |
 | language models | only after a task with an advantage exists | not started |
 

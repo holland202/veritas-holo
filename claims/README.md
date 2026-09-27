@@ -18,4 +18,6 @@ and the result file that shows the verdict.
 | C011 | TESTED | a relator score read from the trained operators before any test separates working from failed training runs: 17/17 accepted succeeded, 17/17 low scores failed (E006) |
 | C012 | TESTED | operators trained without two transitions handle them exactly (12/12 successful runs at 1.0); a transition-memorising null stays at chance on them (E007) |
 | C013 | TESTED | rounding drift in a continuum representation is negligible to 1e6 steps; operator error is what breaks decoding, and snapping to a finite codebook every step removes it (E008) |
+| C014 | REFUTED | a blind training residual gates training success (B1, B2 failed: 16/18 and 6/22; AUC 0.904) (E009) |
+| C015 | TESTED | successful learned operators stay exact at L=10000 in float16 (22/22) (E009) |
 | C004 | PROPOSED | the geometric layer improves a local LLM's reasoning beyond a sham |

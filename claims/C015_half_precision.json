@@ -1,0 +1,11 @@
+{
+ "id": "C015",
+ "status": "TESTED",
+ "claim": "Learned S5 operators that succeed in float64 at L=160 keep accuracy 1.0 at L=10000 when operators and state are rounded to float16 after every step (22 of 22 runs).",
+ "experiment": "E009",
+ "predictions": [
+  "B4"
+ ],
+ "evidence": "results/verified/E009_x86_64.json",
+ "limits": "float16 simulated by NumPy rounding, not measured on phone hardware; one group and width."
+}

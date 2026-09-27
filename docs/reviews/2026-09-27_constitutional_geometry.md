@@ -156,3 +156,15 @@ Ask for one quantitative prediction that the framework makes and a standard meth
 example: a multi-body system, an integrator, a horizon, and a measured invariant error that exceeds a
 stated bound without sector restriction and stays under it with sector restriction. That can be
 registered and run here.
+
+## 7. Follow-up: what we built from it, and what we dropped (E008, E009)
+
+- **Kept:**
+  - Snapping to a finite codebook, for operators with real error (E008, 4 of 4).
+  - The relator ("holonomy closure") score as a training check (E006, 17 of 17 each way).
+- **New and kept:** half-precision execution. Learned operators stay exact at L = 10000 in float16
+  (E009 B4, 22 of 22).
+- **Dropped after testing:**
+  - Snapping for learned operators: not needed; they did not drift to L = 5000.
+  - A closure check over the whole operator space: it cannot separate success from failure.
+  - A blind training residual as a gate: E009 B1 and B2 failed; AUC 0.904.
