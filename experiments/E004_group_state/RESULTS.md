@@ -67,3 +67,23 @@ Record: `results/verified/E004_x86_64.json`.
   overlap as a registered variable.
 - **E004-U1** (the step toward real models): learn the operators from data and see whether training
   finds the relations.
+
+## Replication on the S25 (2026-09-27, pasted by the operator)
+
+```
+VERITAS-HOLO E004 | seeds 1-3 | aarch64 | Python 3.14.6 | NumPy 2.4.4
+arm                 L=10      L=40     L=160   (mean test accuracy over seeds)
+REP               0.9995    1.0000    1.0000
+DIAG              0.0610    0.0188    0.0152
+COUNT-CEILING     0.1930    0.0217    0.0175
+RANDOM-U          0.4363    0.0072    0.0097
+SHAM              0.9122    0.0747    0.0070
+TABLE             1.0000    1.0000    1.0000
+SHAM relations: max ||t^2-I|| 2.76e-15, max ||c^5-I|| 9.97e-15, min ||(tc)^4-I|| 2.8356
+VERDICT  4 of 6 registered predictions held
+```
+
+The same six verdicts, with every registered number equal to x86_64's. One value differs:
+DIAG at L = 10 is 0.0610 on the S25 and 0.0618 on x86_64. L = 10 is not a registered length for
+DIAG. The likely cause is a near-tie between class centroids, broken differently by rounding on the
+two machines; this has not been checked.
