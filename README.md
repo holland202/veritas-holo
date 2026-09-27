@@ -21,6 +21,7 @@ Nothing in this repository answers that yet. What exists is the first instrument
 | [E004](experiments/E004_group_state/) | which kinds of recurrent state can track S5, the group behind the state-space-model limits? | **4 of 6 held, 2 FAILED (kept)**: relation-respecting operators exact at L=40, 160; commuting ones capped by letter counts; relation-free ones at chance. G1 failed on a readout flaw; G5's sham kept a fading signal. |
 | [E005](experiments/E005_learned_state/) | can training discover a group's state from short examples, with no relations given? | **6 of 6 held**: learned from words of length ≤ 8, exact at length 160 (20× the training horizon) on 3 of 5 seeds; 2 failed; the relations appear in the learned operators; commuting training stays at the count ceiling. |
 | [E006](experiments/E006_restart_diagnostic/) | can the trained operators show, before any test, whether training worked? | **4 of 4 held**: all 17 accepted runs worked and all 17 low-score runs failed; picking by the score gave a working model in 9 of 10 groups against 2 of 10 blind. The score knows S5's relations. |
+| [E007](experiments/E007_heldout_composition/) | do learned operators handle transitions never seen in training, where a transition memoriser cannot? | **3 of 3 held**: all 12 runs that learned the seen words scored 1.0 on words full of unseen transitions; the memorising null (13 runs that learned the seen words) stayed at chance on them |
 | E7 | a task whose holonomy information no equal-cost classical recurrence computes | not found yet |
 | language models | only after a task with an advantage exists | not started |
 
@@ -47,7 +48,8 @@ invariants check them, and the result is recorded. The model proposes; the mathe
 <img src="figures/E002_area_readout.png" width="49%" alt="E002 R-squared by arm">
 <img src="figures/E006_restart_diagnostic.png" width="49%" alt="E006 relator score against success">
 </p>
-<p><img src="figures/E006_restart_policy.png" width="49%" alt="E006 restart policy against blind choice"></p>
+<p><img src="figures/E006_restart_policy.png" width="49%" alt="E006 restart policy against blind choice">
+<img src="figures/E007_heldout_composition.png" width="49%" alt="E007 accuracy with and without held-out transitions"></p>
 
 Every figure is drawn by `scripts/make_figures.py` from the committed result files, not from typed
 numbers. 
@@ -60,6 +62,8 @@ numbers.
 - A registered rule-count check, read from the trained operators before any test, predicted which S5
   training runs would extrapolate to length 160 (17 of 17 each way; score 4 ambiguous). The check
   uses the known S5 relations. Restarting on it gave a working model in 9 of 10 groups (E006).
+- Operators trained without two transitions handle them exactly once training succeeds (12 of 12),
+  while a model that memorises transitions stays at chance on them (E007).
 - Training on labelled words of length ≤ 8 can find S5-tracking operators: on 3 of 5 registered seeds
   they were exact at length 160, 20× the longest training word. The readout was fitted on labelled
   long words; the operators never saw one. On 2 of 5 seeds training failed (E005).

@@ -156,6 +156,30 @@ def e006_policy():
     save(fig, "E006_restart_policy.png")
 
 
+def e007():
+    path = os.path.join(ROOT, "results", "verified", "E007_x86_64.json")
+    if not os.path.exists(path):
+        return
+    runs = json.load(open(path, encoding="utf-8"))["runs"]
+    fig, ax = plt.subplots(figsize=(7.6, 4.2))
+    for arm, color, marker, label in (("HELDOUT", S1, "o", "one operator per letter"),
+                                       ("PAIR", S2, "s", "one operator per seen transition (null)")):
+        rs = [r for r in runs if r["arm"] == arm]
+        ax.scatter([r["clean160"] for r in rs], [r["held160"] for r in rs], s=46, color=color, marker=marker,
+                   edgecolor=SURFACE, linewidth=1.5, label=label, alpha=0.9)
+    ax.plot([0, 1], [0, 1], color=MUTED, lw=1, ls="--")
+    ax.text(0.62, 0.66, "same accuracy on both", color=MUTED, fontsize=8, rotation=28)
+    ax.set_xlim(-0.03, 1.05)
+    ax.set_ylim(-0.03, 1.05)
+    ax.set_xlabel("accuracy at L = 160 on words WITHOUT the held-out transitions")
+    ax.set_ylabel("accuracy WITH them")
+    ax.legend(frameon=False, loc="upper left", fontsize=9)
+    title(ax, "E007: learned operators handle transitions they never saw; a transition memoriser cannot",
+          "40 registered seeds per arm. Top right: learned what it saw and composed the rest. "
+          "Bottom right: learned what it saw, nothing else.")
+    save(fig, "E007_heldout_composition.png")
+
+
 def banner():
     fig = plt.figure(figsize=(12, 3.0), facecolor="#0e1116")
     ax = fig.add_axes([0, 0, 1, 1])
@@ -185,7 +209,7 @@ def banner():
     ax.text(0.6, 1.72, "veritas-holo", color="#ffffff", fontsize=38, fontweight="bold", va="center")
     ax.text(0.62, 1.02, "a falsifiable geometric state substrate — measured before it is believed", color="#c3c2b7",
             fontsize=13, va="center")
-    ax.text(0.62, 0.52, "E001–E006  ·  registered predictions  ·  null controls  ·  failures kept  ·  x86_64 + Snapdragon",
+    ax.text(0.62, 0.52, "E001–E007  ·  registered predictions  ·  null controls  ·  failures kept  ·  x86_64 + Snapdragon",
             color="#898781", fontsize=10, va="center")
     fig.savefig(os.path.join(OUT, "banner.png"), dpi=160, facecolor=fig.get_facecolor())
     plt.close(fig)
@@ -199,4 +223,5 @@ if __name__ == "__main__":
     e005()
     e006()
     e006_policy()
+    e007()
     print("wrote", sorted(os.listdir(OUT)))

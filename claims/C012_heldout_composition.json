@@ -1,0 +1,13 @@
+{
+ "id": "C012",
+ "status": "TESTED",
+ "claim": "Per-letter unitary operators trained on S5 words that never contain the ordered transitions (s1,s2) or (s3,s4) handle those transitions exactly: all 12 of 40 runs that learned the seen words scored 1.0 at L=160 on words full of the unseen transitions; a transition-memorising null that also learned the seen words (13 runs) stayed at chance (<= 0.0265) on them.",
+ "experiment": "E007",
+ "predictions": [
+  "H1",
+  "H2",
+  "H3"
+ ],
+ "evidence": "results/verified/E007_x86_64.json",
+ "limits": "Composition is architectural (product of per-letter matrices); training succeeds on only 12 of 40 seeds; one group, one width, one pair of held-out transitions; x86_64 only."
+}

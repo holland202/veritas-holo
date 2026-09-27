@@ -16,4 +16,5 @@ and the result file that shows the verdict.
 | C009 | REFUTED | a spectrum-matched sham carries no S5 signal at L=40: it carried 0.0747 (E004, G5) |
 | C010 | TESTED | gradient descent learns S5 state tracking from words <= 8 and extrapolates to 160 (3 of 5 seeds), building in the relations; commuting training cannot (E005) |
 | C011 | TESTED | a relator score read from the trained operators before any test separates working from failed training runs: 17/17 accepted succeeded, 17/17 low scores failed (E006) |
+| C012 | TESTED | operators trained without two transitions handle them exactly (12/12 successful runs at 1.0); a transition-memorising null stays at chance on them (E007) |
 | C004 | PROPOSED | the geometric layer improves a local LLM's reasoning beyond a sham |
