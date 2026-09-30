@@ -2,6 +2,80 @@
 
 # veritas-holo
 
+<!-- 30s-demo -->
+> **Status labels.** **RESEARCH HYPOTHESIS:** that geometric state gives a reasoning advantage at equal
+> compute. This is not shown; no such task has been found (E7). **PROTOTYPE:** the reference implementation
+> and the experiments below. **NOT PRODUCTION-READY:** all of it. No language model is involved anywhere.
+
+**Headline (measured, [E003](experiments/E003_trace_fingerprint/)):** a fingerprint of concurrent event
+logs that ignores harmless reorderings merges in 4.0 µs at 100 events and 4.4 µs at 100,000. The
+per-resource SHA-256 baseline takes 17,239 µs to extend at 100,000. Its equality matched ground truth on
+3000 of 3000 pairs.
+
+### 30-second demo: PROTOTYPE
+
+```bash
+git clone https://github.com/holland202/veritas-holo && cd veritas-holo
+pip install numpy && python experiments/E003_trace_fingerprint/run.py      # about 7 s
+```
+
+Output (x86_64, Python 3.11, NumPy 2.4.4, 2026-09-30), pasted as printed:
+
+```
+VERITAS-HOLO E003 | seeds 1-5 | x86_64 | Python 3.11.15 | NumPy 2.4.4
+alphabet: 12 actions over 5 resources: 0:24 1:0 2:0 3:4 4:23 5:23 6:13 7:01 8:03 9:04 10:2 11:1
+logs: 1000 of length 200; legal shuffle = 50 independent swaps; SL(2, F_p) check 5 of 5 seeds
+BASE (per-resource SHA-256) equality agrees with ground truth on 3000 of 3000 pairs
+merge time HF: 4.0 us (|v|=100), 4.4 us (|v|=100000)
+extend time BASE: 19.3 us (|v|=100), 17239.3 us (|v|=100000)
+build time per event: HF 1.78 us, BASE 0.34 us
+HELD   T1  legal shuffles same history 1000/1000, HF unchanged 1000/1000
+HELD   T2  illegal swaps different history 1000/1000, HF changed 1000/1000
+HELD   T3  HF equality = ground truth on 3000/3000 pairs
+HELD   T4  merge(F(u),F(v)) = F(uv) 1000/1000; 16-segment tree 1000/1000
+HELD   T5  N1 commuting accepts illegal swaps 1000/1000 = 1.0000 >= 0.99
+HELD   T6  N2 one-block rejects legal shuffles 1000/1000 = 1.0000 >= 0.99
+HELD   T7  merge-time ratio 100000/100: HF 1.09 < 3, BASE 894.6 > 100
+HELD   T8  per-event build: HF 5.3x BASE (HF slower, as registered)
+VERDICT  8 of 8 registered predictions held
+```
+
+### Negative results, up front
+
+- **Accuracy is not the advantage.** The plain per-resource SHA-256 baseline is also right on 3000 of
+  3000 pairs (line 4 above), and it builds 5.3× faster per event (T8). What the fingerprint adds is
+  merging from fingerprints alone.
+- **Holonomy carries signed area, and the shoelace formula computes it exactly for far less.** There is
+  no advantage there ([E002](experiments/E002_holonomy_area/)).
+- **Kept failures:** 2 of 6 predictions failed in [E004](experiments/E004_group_state/), and 2 of 4 in
+  [E009](experiments/E009_blind_check_lowprecision/). Byte-exact replay across platforms was refuted
+  (E001 P9).
+- **A label-free certificate proves self-consistency, not correctness.** In exploratory label-free group
+  discovery, 8 of 40 runs were certified and wrong.
+- **No equal-compute reasoning advantage exists yet (E7).** Until one does, no language model gets wired in.
+
+```mermaid
+flowchart LR
+  L[Event log] --> F["Fingerprint: product of per-event matrices<br/>(independent events commute, dependent ones do not)"]
+  F --> EQ{Equal fingerprints?}
+  EQ -->|same history up to legal reorderings| S[same]
+  EQ -->|an illegal swap| D[different]
+  F1[F of part 1] & F2[F of part 2] --> M["merge = one matrix product<br/>F(u) · F(v) = F(uv)"]
+```
+
+### Why this is not just hashing, a CRDT, or local inference
+
+- **Not just a hash.** A hash of the byte stream changes on every harmless reordering. A sorted multiset
+  hash ignores harmful ones too; that is control N1 above, which accepts 1000 of 1000 illegal swaps.
+  This fingerprint separates the two: T1 and T2 above.
+- **Not a CRDT.** CRDTs merge replicated *state*. This merges *fingerprints of histories* without the
+  events. The math underneath (trace monoids, matrix representations) is textbook; the contribution here
+  is the measured instrument, not new theory.
+- **Not inference.** Nothing is learned in E003. The learned experiments (E005–E012) train tiny operators
+  on group words, not language.
+<!-- /30s-demo -->
+
+
 **A falsifiable geometric reasoning substrate: finite-state manifolds, operator dynamics and
 invariant constraints, built to be measured before it is believed.**
 
